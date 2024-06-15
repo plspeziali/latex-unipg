@@ -10,3 +10,5 @@ template-unipg.out
 template-unipg.run.xml
 template-unipg.synctex.gz
 template-unipg.toc
+*.aux
+*.lof

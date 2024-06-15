@@ -1,5 +1,4 @@
-% Derivato dal mio template vecchio e da https://www.overleaf.com/latex/templates/template-tesi-universita-di-pisa/xwjmznxbtszd
-%   Il progetto nasce dal template per il frontespizio realizzato da Marco Antonio Corallo, che ringrazio. Seguono alcuni commenti per evidenziare la presenza di alcuni pacchetti che mi sono stati utili per la stesura della tesi. Chiaramente, dipende tutto dal tipo di lavoro che uno vuole eseguire, che determina anche le diverse esigenze. Durante la stesura ho passato molto tempo su siti e forum a cercare di risolvere alcuni probelmi di formattazione, ma in generale Latex è stato piuttosto versatile. 
+    %   Il progetto nasce dal template per il frontespizio realizzato da Marco Antonio Corallo, che ringrazio. Seguono alcuni commenti per evidenziare la presenza di alcuni pacchetti che mi sono stati utili per la stesura della tesi. Chiaramente, dipende tutto dal tipo di lavoro che uno vuole eseguire, che determina anche le diverse esigenze. Durante la stesura ho passato molto tempo su siti e forum a cercare di risolvere alcuni probelmi di formattazione, ma in generale Latex è stato piuttosto versatile. 
 
 % Tipo di documento. L'uso di twoside implica che i capitoli inizino sempre con la prima pagina a sinistra, eventualmente lasciando una pagina vuota nel capitolo precedente. Se questa cosa è fastidiosa, è possibile rimuoverlo. 
 \documentclass[a4paper, twoside,openright]{report}
@@ -16,7 +15,9 @@
 \usepackage[utf8]{inputenc} 
 % Encoding del testo
 \usepackage[T1]{fontenc}
-% Permette di generare testo fittizio.
+% Permette di generare testo fittizio. Mi è stato utile 
+% per capire quale sarebbe stata l'impostazione del 
+% testo nella pagina prima che scrivessi un determinato paragrafo
 \usepackage{lipsum}
 % Per ruotare le immagini
 \usepackage{rotating}
@@ -121,6 +122,13 @@
 % Margini prima e dopo blocchi di codice, per avere più distanza
 \lstset{aboveskip=20pt,belowskip=20pt}
 
+% Modifica dello stile dei riferimenti, con il testo in cyano
+\hypersetup{
+    colorlinks,
+    linkcolor=CornflowerBlue,
+    citecolor=CornflowerBlue
+}
+
 % Aggiunti definizioni, teoremi, linea e listing
 \newtheorem{definition}{Definizione}[section]
 \newtheorem{theorem}{Teorema}[section]
@@ -140,15 +148,14 @@
 \begin{document}
 
 \include{chapters/Frontespizio}
+\include{chapters/Abstract}
 
 \tableofcontents
 
 % Rimuovere se non si vuole la tabella delle figure
 \listoffigures
 
-\chapter{Introduzione}
-
-\include{chapters/ch1}
+\include{chapters/Capitolo1}
 
 \appendix
 
